@@ -70,11 +70,22 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <StackPanel x:Name="human" Canvas.Left="78" Orientation="Vertical" Canvas.Top="116">
+            <StackPanel x:Name="human" Canvas.Left="10" Orientation="Vertical" Canvas.Top="10">
                 <Ellipse Fill="White" Height="10" Stroke="Black" Width="10"/>
                 <Rectangle Fill="White" Height="25" Stroke="Black" Width="10"/>
             </StackPanel>
-            <TextBlock x:Name="GameOverText" Canvas.Left="199" TextWrapping="Wrap" Text="Game over" Canvas.Top="182" Height="135" Width="511" FontFamily="Arial Black" FontSize="100"/>
+            <TextBlock x:Name="GameOverText" Canvas.Left="211" TextWrapping="Wrap" Text="Game over" Canvas.Top="209" Height="135" Width="511" FontFamily="Arial Black" FontSize="100"/>
+            <Rectangle x:Name="target" Height="48" Canvas.Left="256" Stroke="Black" Canvas.Top="133" Width="50" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <CompositeTransform Rotation="45"/>
+                </Rectangle.RenderTransform>
+                <Rectangle.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
         </Canvas>
         <StackPanel Grid.Row="2" Grid.Column="3">
             <TextBlock TextWrapping="Wrap" Text="Avoid These" RenderTransformOrigin="2.288,1.878" Style="{StaticResource SubheaderTextBlockStyle}" HorizontalAlignment="Center"/>
