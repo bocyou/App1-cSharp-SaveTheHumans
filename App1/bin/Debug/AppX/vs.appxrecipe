@@ -17,13 +17,13 @@
     <AppXManifest Include="F:\Visual Studio\Projects\App1\App1\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-26T11:38:02.180</Modified>
+      <Modified>2016-09-26T12:08:15.656</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\Visual Studio\Projects\App1\App1\bin\Debug\App1.exe">
       <PackagePath>App1.exe</PackagePath>
-      <Modified>2016-09-26T11:38:01.788</Modified>
+      <Modified>2016-09-26T12:09:15.915</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Visual Studio\Projects\App1\App1\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -51,15 +51,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Visual Studio\Projects\App1\App1\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2016-09-26T07:46:25.184</Modified>
+      <Modified>2016-09-26T12:08:15.237</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Visual Studio\Projects\App1\App1\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2016-09-26T11:38:01.535</Modified>
+      <Modified>2016-09-26T12:09:15.648</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Visual Studio\Projects\App1\App1\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-09-26T11:38:01.974</Modified>
+      <Modified>2016-09-26T12:08:15.606</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
