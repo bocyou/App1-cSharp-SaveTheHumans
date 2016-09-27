@@ -25,6 +25,9 @@ namespace App1
     public sealed partial class MainPage : Page
     {
         Random random = new Random();//This is called a field
+        DispatcherTimer enemyTimer = new DispatcherTimer();
+        DispatcherTimer targetTimer =new DispatcherTimer();
+        bool humanCaptured=false;
         private NavigationHelper navigationHelper;
         private ObservableDictionary defaultViewModel = new ObservableDictionary();
 
@@ -49,9 +52,38 @@ namespace App1
         public MainPage()
         {
             this.InitializeComponent();
+
+            enemyTimer.Tick += enemyTimer_Tick;
+            enemyTimer.Interval = TimeSpan.FromSeconds(2);
+
+            targetTimer.Tick += targetTimer_Tick;
+            targetTimer.Interval = TimeSpan.FromSeconds(.1);
             this.navigationHelper = new NavigationHelper(this);
             this.navigationHelper.LoadState += navigationHelper_LoadState;
             this.navigationHelper.SaveState += navigationHelper_SaveState;
+        }
+
+        void targetTimer_Tick(object sender, object e)
+        {
+            progressBar.Value += 1;
+            if (progressBar.Value >= progressBar.Maximum)
+                EndTheGame();
+        }
+
+        private void EndTheGame()
+        {
+            if(!playArea.Children.Contains(GameOverText)){
+                enemyTimer.Stop();
+                targetTimer.Stop();
+                humanCaptured=false;
+                startButton.Visibility=Visibility.Visible;
+                playArea.Children.Add(GameOverText);    
+            }
+        }
+
+        void enemyTimer_Tick(object sender, object e)
+        {
+            AddEnemy();
         }
 
         /// <summary>
@@ -106,7 +138,20 @@ namespace App1
 
         private void startButton_Click(object sender, RoutedEventArgs e)
         {
-            AddEnemy();
+            StartGame();
+        }
+
+        private void StartGame()
+        {
+            human.IsHitTestVisible = true;
+            humanCaptured = false;
+            progressBar.Value = 0;
+            startButton.Visibility = Visibility.Collapsed;
+            playArea.Children.Clear();
+            playArea.Children.Add(target);
+            playArea.Children.Add(human);
+            enemyTimer.Start();
+            targetTimer.Start();
         }
 
         private void AddEnemy()
