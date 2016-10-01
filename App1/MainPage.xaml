@@ -44,7 +44,7 @@
         </Grid.RowDefinitions>
 
         <!-- Back button and page title -->
-        <Grid Grid.ColumnSpan="4">
+        <Grid x:Name="grid" Grid.ColumnSpan="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="120"/>
                 <ColumnDefinition Width="*"/>
@@ -60,7 +60,7 @@
         </Grid>
         <Button x:Name="startButton" Content="Start!" HorizontalAlignment="Center" Margin="0" Grid.Row="2" VerticalAlignment="Center" Height="61" Width="80" Grid.Column="1" Click="startButton_Click"/>
         <ProgressBar x:Name="progressBar" Grid.Column="2" Grid.Row="2" Height="20"/>
-        <Canvas x:Name="playArea" Grid.Column="2" Grid.Row="1">
+        <Canvas x:Name="playArea" Grid.Column="2" Grid.Row="1" PointerMoved="playArea_PointerMoved" PointerExited="playArea_PointerExited">
             <Canvas.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <LinearGradientBrush.RelativeTransform>
@@ -70,9 +70,9 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Canvas.Background>
-            <StackPanel x:Name="human" Canvas.Left="10" Orientation="Vertical" Canvas.Top="10">
+            <StackPanel x:Name="human" Canvas.Left="10" Orientation="Vertical" Canvas.Top="10" PointerPressed="human_PointerPressed">
                 <Ellipse Fill="White" Height="10" Stroke="Black" Width="10"/>
-                <Rectangle Fill="White" Height="25" Stroke="Black" Width="10"/>
+                <Rectangle x:Name="target1" Fill="White" Height="25" Stroke="Black" Width="10" PointerEntered="target1_PointerEntered"/>
             </StackPanel>
             <TextBlock x:Name="GameOverText" Canvas.Left="211" TextWrapping="Wrap" Text="Game over" Canvas.Top="209" Height="135" Width="511" FontFamily="Arial Black" FontSize="100"/>
             <Rectangle x:Name="target" Height="48" Canvas.Left="256" Stroke="Black" Canvas.Top="133" Width="50" RenderTransformOrigin="0.5,0.5">

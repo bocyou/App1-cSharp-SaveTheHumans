@@ -6,7 +6,7 @@
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
     <PackageIdentityName>e674a49f-c18c-4148-9d18-e20e6a4b3475</PackageIdentityName>
-    <RegisteredManifestChecksum>9F3C8231AF4A776F8F36456012193D2E6D94866AFF73CD36A77ACE356B378808</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>22E550DF7A30F6C0CE5124D93395AFAFD0A33FB6B50006F08468C618987CF114</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>e674a49f-c18c-4148-9d18-e20e6a4b3475_1.0.0.0_neutral__1gvyr3z8sh2he</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>e674a49f-c18c-4148-9d18-e20e6a4b3475_1gvyr3z8sh2he!App</RegisteredUserModeAppID>
     <RegisteredPackageID>e674a49f-c18c-4148-9d18-e20e6a4b3475</RegisteredPackageID>
@@ -17,13 +17,13 @@
     <AppXManifest Include="F:\Visual Studio\Projects\App1\App1\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-26T12:08:15.656</Modified>
+      <Modified>2016-10-01T11:38:22.318</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="F:\Visual Studio\Projects\App1\App1\bin\Debug\App1.exe">
       <PackagePath>App1.exe</PackagePath>
-      <Modified>2016-09-27T08:52:58.564</Modified>
+      <Modified>2016-10-01T12:10:15.780</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Visual Studio\Projects\App1\App1\Assets\Logo.scale-100.png">
       <PackagePath>Assets\Logo.scale-100.png</PackagePath>
@@ -51,15 +51,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Visual Studio\Projects\App1\App1\bin\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2016-09-26T12:08:15.237</Modified>
+      <Modified>2016-10-01T11:38:21.595</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Visual Studio\Projects\App1\App1\bin\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2016-09-27T08:52:58.305</Modified>
+      <Modified>2016-10-01T12:06:55.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="F:\Visual Studio\Projects\App1\App1\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-09-26T12:08:15.606</Modified>
+      <Modified>2016-10-01T11:38:22.067</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

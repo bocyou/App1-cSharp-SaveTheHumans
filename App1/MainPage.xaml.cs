@@ -161,6 +161,13 @@ namespace App1
             AnimateEnemy(enemy,0, playArea.ActualWidth-100,"(Canvas.Left)");
             AnimateEnemy(enemy,random.Next((int)playArea.ActualWidth-100),random.Next((int)playArea.ActualHeight-100),"(Canvas.Top)");
             playArea.Children.Add(enemy);
+            enemy.PointerEntered+=enemy_PointerEntered;//???
+        }
+
+        private void enemy_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            if (humanCaptured)
+                EndTheGame();
         }
 
         private void AnimateEnemy(ContentControl enemy, double from, double to, string propertyToAnimate)
@@ -180,6 +187,54 @@ namespace App1
             Storyboard.SetTargetProperty(animation, propertyToAnimate);
             storyboard.Children.Add(animation);
             storyboard.Begin();
+        }
+
+        private void human_PointerPressed(object sender, PointerRoutedEventArgs e)
+        {
+            if (enemyTimer.IsEnabled)
+            {
+                humanCaptured = true;
+                human.IsHitTestVisible = false;
+            }
+        }
+
+        private void target1_PointerEntered(object sender, PointerRoutedEventArgs e)
+        {
+            if (targetTimer.IsEnabled && humanCaptured)
+            {
+                progressBar.Value = 0;
+                Canvas.SetLeft(target, random.Next(100, (int)playArea.ActualWidth - 100));
+                Canvas.SetTop(target,random.Next(100,(int)playArea.ActualHeight-100));
+                Canvas.SetLeft(human,random.Next(100,(int)playArea.ActualWidth-100));
+                Canvas.SetTop(human,random.Next(100,(int)playArea.ActualHeight-100));
+                humanCaptured=false;
+                human.IsHitTestVisible=true;
+            }
+        }
+
+        private void playArea_PointerMoved(object sender, PointerRoutedEventArgs e)
+        {
+            if (humanCaptured)
+            {
+                Point pointerPosition = e.GetCurrentPoint(null).Position;
+                Point relativePosition = grid.TransformToVisual(playArea).TransformPoint(pointerPosition);
+                if ((Math.Abs(relativePosition.X - Canvas.GetLeft(human)) > human.ActualHeight * 3)||(Math.Abs(relativePosition.Y-Canvas.GetTop(human))>human.ActualHeight*3))
+                {
+                    humanCaptured = false;
+                    human.IsHitTestVisible = true;
+                }
+                else
+                {
+                    Canvas.SetLeft(human, relativePosition.X - human.ActualWidth / 2);
+                    Canvas.SetTop(human, relativePosition.Y - human.ActualHeight / 2);
+                }
+            }
+        }
+
+        private void playArea_PointerExited(object sender, PointerRoutedEventArgs e)
+        {
+            if (humanCaptured)
+                EndTheGame();
         }
     }
 }
